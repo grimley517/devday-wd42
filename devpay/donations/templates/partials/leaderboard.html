@@ -1,0 +1,13 @@
+<h1>Campaign Tracker</h1>
+<ul>
+    {% for campaign in campaigns %}
+    <li> {{campaign.name}} -> {{campaign.get_total}}</li>
+    {% endfor%}
+</ul>
+<h1>Donation Leaderboard</h1>
+<ol>
+    
+{%for donation in donations%}
+<li>{{donation.full_name|upper}} - AUD{{donation.amount|floatformat:2}}</li>
+{% endfor%}
+</ol>

@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+
+{% block body%}
+
+{% include "partials/leaderboard.html" with donations=donations %}
+<h1>Donate here please.</h1>
+
+{% include "partials/donationForm.html" with form=form %}
+<script>
+    $(function(){
+       var btkey = $('#dropin').data('client-key');
+        braintree.setup(btkey,'dropin',{
+            container:'dropin'
+        });
+    });
+</script>
+{% endblock body %}

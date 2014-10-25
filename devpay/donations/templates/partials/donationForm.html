@@ -1,0 +1,13 @@
+<form id="checkout" method="post" action="">
+{% csrf_token %}
+<ul>
+{% for field in form %}
+<li><label>{{field.label}}</label> {{field}}
+    {% if field.errors %} {{field.errors}}{% endif %}
+</li>
+{% endfor%}
+</ul>
+  <div id="dropin" data-client-key="{{BT_CLIENT_KEY}}"></div>
+  <input type="submit" value="Pay please">
+  <input type='hidden'>
+</form>
